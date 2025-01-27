@@ -1,21 +1,21 @@
 function navButtonActive() {
-  let nvBtn = document.getElementById('nvBtn');
-  let dragHandle = document.getElementById('nav-btn');  
-  let navSecDiv =document.getElementById('navMenuDiv');
+  const nvBtn = document.getElementById('nvBtn');
+  const dragHandle = document.getElementById('nav-btn');  
+  const navSecDiv = document.getElementById('navMenuDiv');
 
-  let isOpen = false; // Track the current mode
+  if (!nvBtn || !dragHandle || !navSecDiv) return;
+
+  let isOpen = false;
 
   nvBtn.addEventListener('click', function() {
     if (isOpen) {
-      dragHandle.textContent = 'drag_handle'; // Change to previous mode
-      navSecDiv.style.background='';
-      
+      dragHandle.textContent = 'drag_handle';
+      navSecDiv.style.background = '';
     } else {
-      dragHandle.textContent = 'close'; // Change to new mode
-      navSecDiv.style.background= "linear-gradient(to bottom,#41116f ,#32094e)";
-     
+      dragHandle.textContent = 'close';
+      navSecDiv.style.background = "linear-gradient(to bottom,#41116f ,#32094e)";
     }
-    isOpen = !isOpen; // Toggle the mode
+    isOpen = !isOpen;
   });
 }
 
@@ -25,56 +25,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-var wdt = screen.width;
-var lastScrollTop = 0;
-navbarImg = document.getElementById("nav-img");
-logo = document.getElementById("logo");
-nav = document.getElementById("nav");
+let lastScrollTop = 0;
+const navbarImg = document.getElementById("nav-img");
+const logo = document.getElementById("logo");
+const nav = document.getElementById("nav");
 
-window.addEventListener("scroll", function () {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
- 
-  if(scrollTop >lastScrollTop){
-                
-    navbarImg.style.top = "-100px";
-    logo.style.top = "-100px";
-    nav.style.top = "-100px";
-
-
+if (navbarImg && logo && nav) {
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+      navbarImg.style.top = "-100px";
+      logo.style.top = "-100px";
+      nav.style.top = "-100px";
+    } else {
+      navbarImg.style.top = "0px";
+      logo.style.top = "0px";
+      nav.style.top = "0px";
+    }
+    lastScrollTop = scrollTop;
+  });
 }
 
-else{
-navbarImg.style.top="0px";
-logo.style.top="0px";
-nav.style.top="0px";
 
-}
-lastScrollTop = scrollTop;
-})
+// ======== Like Function Start From Here =========
 
+const likedStates = new Map();
 
-// ======== Like Function Strat From Here =========
-
-var nm=0;
- function liked (a){
+function liked(index) {
+  const wishElements = document.getElementsByClassName("wish");
   
-  let wish = document.getElementsByClassName("wish");
-
-  if (nm==0){
-    wish[a].classList.remove("bi-heart");
-    wish[a].classList.add("bi-heart-fill");
-    nm++;
-    wish[a].style.color = "#ee2a7b";
-
-  }
-  else{
-    wish[a].classList.remove("bi-heart-fill");
-    wish[a].classList.add("bi-heart");
-    nm--;
-    wish[a].style.color = "#391373";
-   
-  }
+  if (!wishElements[index]) return;
   
+  const wish = wishElements[index];
+  const isLiked = likedStates.get(index) || false;
+  
+  if (!isLiked) {
+    wish.classList.remove("bi-heart");
+    wish.classList.add("bi-heart-fill");
+    wish.style.color = "#ee2a7b";
+    likedStates.set(index, true);
+  } else {
+    wish.classList.remove("bi-heart-fill");
+    wish.classList.add("bi-heart");
+    wish.style.color = "#391373";
+    likedStates.set(index, false);
+  }
 }
 
 

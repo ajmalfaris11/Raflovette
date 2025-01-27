@@ -1,21 +1,17 @@
 @font-face {
 	font-family: 'appetite-pro';
-	src: url('font/appetite-pro-font-family-1703377915-0/AppetitePro-Medium-BF64cc5fc311b19.otf') 
-		 
-  }
+	src: url('font/appetite-pro-font-family-1703377915-0/AppetitePro-Medium-BF64cc5fc311b19.otf') format('opentype');
+	font-display: swap;
+}
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
-
 }
 
 body{
-	
 	background-color: rgb(255, 255, 255);
-
 }
 
 .marquee-container {

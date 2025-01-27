@@ -1,8 +1,8 @@
 
 
 * {
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 /* creating varibable in cs */
@@ -20,8 +20,8 @@ h5{
 
 @font-face {
   font-family: 'appetite-pro';
-  src: url('font/appetite-pro-font-family-1703377915-0/AppetitePro-Medium-BF64cc5fc311b19.otf') 
-       
+  src: url('font/appetite-pro-font-family-1703377915-0/AppetitePro-Medium-BF64cc5fc311b19.otf') format('opentype');
+  font-display: swap;
 }
 
 /* ======================================================================================= */
@@ -214,21 +214,13 @@ box-shadow: #d0b7de;border: #c6c1cd solid 1px;
   transform: scale(1.05);
 }
 .card{
-  /* float: left; */
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 0;
   border-radius: 24px;
-  width: 15rem;
-  border-color: #4A0983;
-  /* transition: transform 0.5s ease-in-out;
-  */
+  width: 100%;
   border: #ffffff solid 3px;
   align-items: center;
-  width: 100%;
   background: radial-gradient(#f6eef9,#d0b7de);
-  margin:0px;
-  padding: 0%;
-  
+  padding: 0;
 }
 
 
@@ -258,19 +250,15 @@ box-shadow: #d0b7de;border: #c6c1cd solid 1px;
 
 .card img{
   transition: transform 0.5s ease-in-out;
-
-}
-
-.card img{
   transform: scale(1.05);
 }
 
 .card-body a{
   background-color: #391373;
-  align-items: center; color: #f4e7fb;
-  margin-top: 15px;
+  align-items: center;
+  color: #f4e7fb;
+  margin: 15px 0 10px 0;
   font-family: appetite-pro, sans-serif;
-  margin-bottom: 10px;
   border-radius: 12px;
 }
 
@@ -464,8 +452,8 @@ footer p{
 /* ================= Scroll Track ============ */
 
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-thumb {
