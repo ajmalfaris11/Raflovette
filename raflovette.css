@@ -178,25 +178,44 @@ h5{
 
 
 #navIconDiv ul{
-  color: white;
+  color: rgb(255, 179, 0);
   font-size: 1.3rem;
 
 }
 
+/* Make navbar social icon <i> tags inherit and match link gold */
+#navIconDiv ul i {
+  color: rgb(255, 179, 0);
+  transition: color 0.2s ease;
+}
+
+#navIconDiv ul i:hover {
+  color: #ffd700;
+}
+
 ul a{
   text-decoration:none ;
-  color: white;
+  color: rgb(255, 179, 0);
   font-size: 1.1rem;
   font-weight: 100;
   font-family:appetite-pro,sans-serif;
 }
 ul a:hover{
-transition: 0.2s;
+  transition: 0.2s;
   text-decoration:underline;
- 
-} 
+  color: #ffd700;
+}
 
+/* Bootstrap nav-link styling */
+.nav-link {
+  color: rgb(255, 183, 0) !important;
+  font-family: appetite-pro, sans-serif;
+}
 
+.nav-link:hover {
+  color: #ffd700 !important;
+  text-decoration: underline;
+}
 
 .nave-links ul{
     position: relative;
