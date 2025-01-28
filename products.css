@@ -19,16 +19,28 @@ body{
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 10px; 
+	padding: 5px; 
 	z-index: 999;
 	color: #ffffff;
 	font-weight: 500;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background: linear-gradient( to bottom ,#9035cd ,#8a3cd2);
-	padding: 5px;
 	margin-bottom: -4px;
+}
 
-  }
+@media (max-width: 768px) {
+	.marquee-container {
+		padding: 3px;
+		font-size: 0.9em;
+	}
+}
+
+@media (max-width: 480px) {
+	.marquee-container {
+		padding: 2px;
+		font-size: 0.8em;
+	}
+}
 
 
 
@@ -39,8 +51,21 @@ body{
 	background: linear-gradient(to bottom,#32094e ,#41116f);
 	position: fixed;
 	z-index: 999;
-	
-  }
+}
+
+@media (max-width: 768px) {
+	#nav-bar {
+		top: 30px;
+		height: 60px;
+	}
+}
+
+@media (max-width: 480px) {
+	#nav-bar {
+		top: 25px;
+		height: 50px;
+	}
+}
 
 
 
@@ -113,8 +138,22 @@ section .card .image img{
 	margin-left: 30px;
 	float: right;
 	border-bottom: #31086a 2px solid;
+}
 
+@media (max-width: 768px) {
+	.card {
+		width: 250px;
+		margin-left: 20px;
+		border-radius: 20px;
+	}
+}
 
+@media (max-width: 480px) {
+	.card {
+		width: 220px;
+		margin-left: 15px;
+		border-radius: 16px;
+	}
 }
 
 .card:hover{
@@ -164,7 +203,18 @@ section .card .image img{
 	font-family: appetite-pro;
 	font-weight: 600;
 	font-size: 20px;
+}
 
+@media (max-width: 768px) {
+	.card .name-profession {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 480px) {
+	.card .name-profession {
+		font-size: 16px;
+	}
 }
 
 .rating{
